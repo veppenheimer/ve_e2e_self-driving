@@ -36,7 +36,7 @@ class MotionController:
         # 第一段: 直走 2s, 第二段: 原地顺时针旋转 2s
         self.init_motions = deque([
             {'linear': 0.5, 'angular': 0.0, 'duration': 1.2},
-            {'linear': 0.0, 'angular': -1.5, 'duration': 1.7},
+            {'linear': 0.0, 'angular': -1.5, 'duration': 1.74},
         ])
         self.init_phase = True  # 是否正在执行初始化阶段
         self.curr_lin = 0.0
@@ -69,7 +69,7 @@ class MotionController:
         self.stream = cuda.Stream()
 
         # 控制参数
-        self.default_linear_speed = 0.4
+        self.default_linear_speed = 0.2
         self.slow_linear_speed = 0.12
         self.turn_angular_speed = 0.5
         self.stop1_duration = 2.0

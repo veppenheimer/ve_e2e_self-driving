@@ -215,20 +215,6 @@ class MotionController:
                         self.current_action = None
                         self.current_sign = None
                         continue
-                # if self.current_action in ('turn_left', 'turn_right'):
-                #     if elapsed < self.action_duration:
-                #         twist.linear.x = 0.0
-                #         twist.angular.z = self.turn_angular_speed if self.current_action == 'turn_left' else -self.turn_angular_speed
-                #         self.twist_pub.publish(twist)
-                #         self.rate.sleep()
-                #         continue
-                #     else:
-                #         rospy.loginfo("Action %s completed", self.current_action)
-                #         self.clear_sign_file()
-                #         self.prev_processed_sign = self.current_sign
-                #         self.current_action = None
-                #         self.current_sign = None
-                #         continue
 
             # 正常 TRT 推理流程
             ret, frame = self.cap.read()
